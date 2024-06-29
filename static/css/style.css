@@ -1,0 +1,71 @@
+.bg-register{
+    background-color: rgb(193, 128, 255);
+}
+
+html{
+    background-color: rgb(81, 19, 138);
+}
+.btn-font{
+    font-weight: lighter;
+    color: blueviolet;
+}
+.btn-hover:hover{
+    background: rgb(127, 85, 166);
+    border: white;
+    color: white;
+
+}
+.font-hover{
+
+    color: rgb(221, 184, 255);
+    text-shadow: 2px 15px rgb(255, 255, 255);
+}
+
+.font-hover:hover{
+    color: #e0d6ff;
+}
+
+.playwrite-nz-sing-up {
+  font-family: "Playwrite NZ", cursive;
+  font-optical-sizing: auto;
+  font-weight:700;
+  font-style: normal;
+}
+
+.playwrite-nz-h3 {
+    font-family: "Playwrite NZ", cursive;
+    font-optical-sizing: auto;
+    font-weight:700;
+    font-style: normal;
+  }
+  .playwrite-nz-h32 {
+    font-family: "Playwrite NZ", cursive;
+    font-optical-sizing: auto;
+    font-weight:400;
+    font-style: normal;
+  }
+
+.card-font{
+    color: blueviolet;
+}
+.c-cards{
+    background: rgb(255, 255, 255);
+    border: solid 10px rgb(189, 127, 255);
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+}
+.c-cards:hover{
+    box-shadow: 1px 1px 30px 1px rgba(0, 0, 0, 0.516);
+}
+
+.card-btn{
+    background: blueviolet;
+    font-weight: bold;
+    color: white;
+}
+.card-btn:hover{
+    background: #6000bacb;
+    color: white;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.292);
+}

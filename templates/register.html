@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>Sign up</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Playwrite+NZ:wght@100..400&display=swap" rel="stylesheet">
+   </head>
+   <body class="bg-transparent">
+      <div class="container">
+         <h1 class="text-white pt-3 playwrite-nz-sing-up">Sign up</h1>
+         <div class="container col-lg-6 d-flex justify-content-center text-white">
+            <div>
+               <h3 class="pt-5 text-center p-lg-0 playwrite-nz-h3">Welcome to the Sign up page!</h3>
+               <div class="d-flex justify-content-center">
+                  <div class="p-3">
+                     <a href="/" class="btn btn-light btn-hover border-0 btn-font py-2 px-4">Home</a>
+                     <a href="/login" class="btn btn-light btn-hover border-0 btn-font py-2 px-4">Login</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container col-lg-6 d-flex justify-content-center bg-register rounded mt-3 p-5 shadow">
+            <form class="container-fluid col-lg-12 text-white p-1" method="POST" id="signupForm">{% csrf_token %}
+                <div class="row">
+                    <div class="mb-3 col-lg-6">
+                        <div><i class="fa-solid fa-f fa-lg px-2" style="color: #ffffff;"></i><label for="exampleInputUser1" class="form-label" >- First name</label></div>
+                        <input type="text" class="form-control" name="fname" id="fname" aria-describedby="emailHelp required">
+                        
+                     </div>
+                     <div class="mb-3 col-lg-6  ">
+                        <div><i class="fa-solid fa-l fa-lg px-2" style="color: #ffffff;"></i><label for="exampleInputUser1" class="form-label" >- Last name</label></div>
+                        <input type="text" class="form-control" name="lname" id="lname" aria-describedby="emailHelp" required>
+                        
+                     </div>
+                </div>
+                
+               <div class="mb-3">
+                  <div><i class="fa-regular fa-user fa-lg px-2" style="color: #ffffff;"></i><label for="usernameInput" class="form-label">Username</label></div>
+                  <input type="text" class="form-control" name="uname" id="usernameInput" aria-describedby="emailHelp" required>
+                  
+               </div>
+               <div class="mb-3">
+                <div>
+                <i class="fa-regular fa-envelope fa-lg px-2" style="color: #ffffff;"></i>
+                    <label for="emailInput" class="form-label">Email</label>
+                    <input type="email" name="email" class="form-control" id="emailInput" aria-describedby="emailHelp" required>
+                </div>
+                
+             </div>
+               <div class="mb-3">
+                <div>
+                    <i class="fa-solid fa-lock fa-lg px-2" style="color: #ffffff;"></i>
+                    <label for="passwordInput" class="form-label">Password</label>
+                </div>
+                  <input type="password" name="pwd" class="form-control" id="passwordInput" required>
+               </div>
+               <button type="submit" class="btn btn-light btn-hover btn-font border-0" id="signupButton">Check</button>
+
+               <button type="submit" class="btn btn-light btn-hover btn-font border-0 collapse" id="submitButton">Sign Up</button>
+               <br>
+               
+               <div id="validations" class="small collapse">
+                <p class="mt-2 fw-light">Note:</p>
+                    <ul>
+                        <li><p>use your org/college mail</p></li>
+                        <li><p>Username should be unique</p></li>
+                        <li><p>Password  should be greater than 8 characters</p></li>
+                        <li><p>Password should contain atleast one special character</p></li>
+                        <li><p>Password should contain alpha numeric values</p></li>
+                    </ul>
+               </div>
+            </form>
+
+         </div>
+      </div>
+      <footer>
+        <div class="container col-lg-8 sticky-bottom">
+            <!--social media icons-->
+            <div class="d-flex justify-content-center mt-3">
+                <div class="mx-2"><i class="fa-brands fa-linkedin fa-2xl font-hover"></i></div>
+                <div class="mx-2"><i class="fa-regular fa-envelope fa-2xl font-hover"></i></div>
+                <div class="mx-2"><i class="fa-brands fa-square-facebook fa-2xl font-hover"></i></div>
+            </div>
+            <div class="row row-cols-1 row-cols-lg-2 mt-4">
+                <div class="">
+                    <p class="text-center  text-white p-2">all copyrights @ exampleC0llege students</p>
+                </div>
+                <div class="d-flex justify-content-center col-lg-">
+                    <a class="text-center  text-white p-2 text-decoration-none fw-lighter">Home</a>
+                    <a class="text-center  text-white p-2 text-decoration-none fw-lighter">About</a>
+                    <a class="text-center  text-white p-2 text-decoration-none fw-lighter">Contact</a>
+                </div>
+                
+
+            </div>
+        </div>
+        
+      </footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      <script src="https://kit.fontawesome.com/dedeab9b5a.js" crossorigin="anonymous"></script>
+      <script>
+
+        $(document).ready(function() {
+            $('#signupButton').on('click', function(event) {
+                event.preventDefault();
+     
+                const formData = {
+                    username: $('#usernameInput').val(),
+                    email: $('#emailInput').val(),
+                    password: $('#passwordInput').val()
+                };
+
+                $.ajax({
+                    type: "POST",
+                    url: "{% url 'validate' %}", 
+                    data: formData,
+                    success: function(response) {
+                        if (response.status === 'success') {
+
+                            $('#validations').hide()
+                            $('#signupButton').hide()
+                            $('#submitButton').show()
+                            //alert('Sign up successful!');
+                        } else {
+                            //show the notice,validations failed
+                            $('#validations').show()
+                        }
+                    },
+                    error: function(xhr, errmsg, err) {
+                        console.log(xhr.status + ": " + xhr.responseText); // Provide some feedback in case of error
+                    }
+                });
+            });
+        });
+     </script>
+   </body>
+</html>

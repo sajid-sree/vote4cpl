@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+NZ:wght@100..400&display=swap" rel="stylesheet">   
+</head>
+<body class="bg-transparent">
+    <div class="container">
+        <h1 class="text-white pt-3 playwrite-nz-sing-up">Login</h1>
+        <div class="container col-lg-6 d-flex justify-content-center text-white">
+            <div>
+                <h3 class="p-3 p-lg-1 text-center playwrite-nz-h3">Hah... Please authenticate yourself<i class="fa-regular fa-face-laugh-wink fa-2xl px-3" style="color: #ffffff;"></i></h3>
+                <div class="d-flex justify-content-center">
+                    <div>
+                        <a href="/" class="btn btn-light btn-hover border-0 btn-font py-2 px-4">Home</a>
+                        <a href="/signup/" class="btn btn-light btn-hover border-0 btn-font py-2 px-4">Register</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container col-lg-6 d-flex justify-content-center bg-register rounded mt-3 p-5 shadow">
+            
+      
+            <form class="container-fluid col-lg-12 text-white p-1">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong class="playwrite-nz-h32">This is for message</strong>
+                    <button type="button" onclick="this.parentElement.style.display='none';" class="btn-close" data-bs-dismiss="alert" label="Close">	</button>
+                </div> 
+               <div class="mb-3">
+                  <div><i class="fa-regular fa-user fa-lg px-2" style="color: #ffffff;"></i><label for="exampleInputUser1" class="form-label">Username</label></div>
+                  <input type="email" class="form-control" id="exampleInputUser1" aria-describedby="emailHelp">
+                  
+               </div>
+               
+               <div class="mb-3">
+                <div>
+                    <i class="fa-solid fa-lock fa-lg px-2" style="color: #ffffff;"></i>
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                </div>
+                  <input type="password" class="form-control" id="exampleInputPassword1">
+               </div>
+               
+               <button type="submit" class="btn btn-light btn-hover btn-font border-0">Sign Up</button>
+               <br>
+               
+               <div id="validations" class="small ">
+                <p class="mt-2 fw-light">Hoo hu <i class="fa-regular fa-face-sad-tear fa-2xl pt-3" style="color: #ffffff;"></i></p>
+
+                    <ul>
+                        <li><p>Username or password is incorrect</p></li>                        
+                    </ul>
+               </div>
+            </form>
+
+         </div>
+    </div>
+    <footer>
+        <div class="container col-lg-8 sticky-bottom">
+            <!--social media icons-->
+            <div class="d-flex justify-content-center mt-3">
+                <div class="mx-2"><i class="fa-brands fa-linkedin fa-2xl font-hover"></i></div>
+                <div class="mx-2"><i class="fa-regular fa-envelope fa-2xl font-hover"></i></div>
+                <div class="mx-2"><i class="fa-brands fa-square-facebook fa-2xl font-hover"></i></div>
+            </div>
+            <div class="row row-cols-1 row-cols-lg-2 mt-4">
+                <div class="">
+                    <p class="text-center  text-white p-2">all copyrights @ exampleC0llege students</p>
+                </div>
+                <div class="d-flex justify-content-center col-lg-">
+                    <a class="text-center  text-white p-2 text-decoration-none fw-lighter">Home</a>
+                    <a class="text-center  text-white p-2 text-decoration-none fw-lighter">About</a>
+                    <a class="text-center  text-white p-2 text-decoration-none fw-lighter">Contact</a>
+                </div>
+                
+
+            </div>
+        </div>
+        
+      </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/dedeab9b5a.js" crossorigin="anonymous"></script>
+</body>
+</html>
