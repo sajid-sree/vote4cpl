@@ -13,10 +13,10 @@
    </head>
    <body class="bg-transparent">
       <div class="container">
-         <h1 class="text-white pt-3 playwrite-nz-sing-up">Sign up</h1>
+         <h1 class="text-white pt-3 playwrite-nz-sing-up">Forgot</h1>
          <div class="container col-lg-6 d-flex justify-content-center text-white">
             <div>
-               <h3 class="pt-5 text-center p-lg-0 playwrite-nz-h3">Verify yourself</h3>
+               <h3 class="pt-5 text-center p-lg-0 playwrite-nz-h3">No worries, please drop your Username</h3>
                <!--div class="d-flex justify-content-center">
                   <div class="p-3">
                      <a href="/" class="btn btn-light btn-hover border-0 btn-font py-2 px-4">Home</a>
@@ -26,19 +26,28 @@
             </div>
          </div>
          <div class="container col-lg-6 d-flex justify-content-center bg-register rounded mt-3 p-5 shadow">
-            <form class="container-fluid col-lg-12 text-white p-1" id="">
-                    <p>We have sent a One time password to xxxxx@college.com</p>
-                    <p id="warning" class="collapse">Entered wrong OTP? <a href="/resendotp">Resend OTP</a></p>
+
+            <form class="container-fluid col-lg-12 text-white p-1" id="" method="POST">{% csrf_token %}
+                <div class="d-flex justify-content-center">
+                    {% for message in messages %}
+                          <div class="alert alert-{{ message.tags }} bg-transparent alert-dismissible border-0 fade show" role="alert">
+                              <p class="text-white">{{ message }}</p>
+                        <button type="button" onclick="this.parentElement.style.display='none';" class="btn-close text-white border-0" data-bs-dismiss="alert" label="Close">	</button>
+                          </div>
+                    {% endfor %}
+                    </div>
+                    <!--p>Enter Username</p-->
+                    <!--p id="warning" class="collapse">Entered wrong OTP? <a href="/resendotp">Resend OTP</a></p-->
                     <div class="mb-3">
-                        <div><label for="exampleOtp1">One time password</label></div>
-                        <input type="text" name="otp" class="form-control" id="exampleOtp1" aria-describedby="emailHelp">
+                        <div><label for="exampleOtp1">Username</label></div>
+                        <input type="text" name="uname" class="form-control" id="exampleOtp1" aria-describedby="emailHelp">
                      </div>
-                
-               
-               
-               <button type="submit" class="btn btn-light btn-hover btn-font border-0" id="otpSubmit">Verify</button>
+
+
+
+               <button type="submit" class="btn btn-light btn-hover btn-font border-0" id="otpSubmit">Send Mail</button>
                <br>
-               
+
                <div id="validations" class="small collapse">
                 <p class="mt-2 fw-light">Note:</p>
                     <ul>
@@ -69,49 +78,16 @@
                     <a class="text-center  text-white p-2 text-decoration-none fw-lighter">About</a>
                     <a class="text-center  text-white p-2 text-decoration-none fw-lighter">Contact</a>
                 </div>
-                
+
 
             </div>
         </div>
-        
+
       </footer>
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
       <script src="https://kit.fontawesome.com/dedeab9b5a.js" crossorigin="anonymous"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-      <script>
-        $(document).ready(function() {
-            $('#otpSubmit').on('click', function(event) {
-                event.preventDefault();
 
-                const formData = {
-                    otp: $('#exampleOtp1').val(),
-                    csrfmiddlewaretoken: '{{ csrf_token }}',
-
-                };
-                const url = window.location.href;
-                const urlParts = url.split('/');
-                const uname= urlParts[urlParts.length - 1];
-                $.ajax({
-                    type: 'POST',
-                    url: '',
-                    data: formData,
-                    success: function(response) {
-                        if (response.status === 'success') {
-                            window.location.href = "{% url 'login' %}";
-                            //alert('Sign up successful!');
-                        } else if (response.status === 'failed') {
-                            $('#warning').removeClass('collapse');
-
-                            $('#exampleOtp1').val('');
-                        }
-                    },
-                    error: function(xhr, errmsg, err) {
-                        console.log(xhr.status + ": " + xhr.responseText); // Provide some feedback in case of error
-                    }
-                });
-            });
-        });
-     </script>
    </body>
 </html>
